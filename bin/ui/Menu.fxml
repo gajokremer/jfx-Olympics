@@ -10,7 +10,7 @@
    <children>
       <TextArea fx:id="taResults" layoutX="342.0" layoutY="14.0" prefHeight="293.0" prefWidth="200.0" wrapText="true" />
       <TextArea fx:id="taInput" layoutX="57.0" layoutY="14.0" prefHeight="293.0" prefWidth="200.0" wrapText="true" />
-      <Button layoutX="254.0" layoutY="328.0" mnemonicParsing="false" style="-fx-background-color: blue;" text="Organize" textFill="WHITE">
+      <Button layoutX="254.0" layoutY="328.0" mnemonicParsing="false" onAction="#organizeInfo" style="-fx-background-color: blue;" text="Organize" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

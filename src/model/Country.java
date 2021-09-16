@@ -3,9 +3,9 @@ package model;
 public class Country {
 
 	private String name;
-	private int mGold, mSilver, mBronze, fGold, fSilver, fBronze;
+	private String mGold, mSilver, mBronze, fGold, fSilver, fBronze;
 	
-	public Country(String name, int mGold, int mSilver, int mBronze, int fGold, int fSilver, int fBronze) {
+	public Country(String name, String mGold, String mSilver, String mBronze, String fGold, String fSilver, String fBronze) {
 		super();
 		this.name = name;
 		this.mGold = mGold;
@@ -24,51 +24,59 @@ public class Country {
 		this.name = name;
 	}
 
-	public int getmGold() {
+	public String getmGold() {
 		return mGold;
 	}
 
-	public void setmGold(int mGold) {
+	public void setmGold(String mGold) {
 		this.mGold = mGold;
 	}
 
-	public int getmSilver() {
+	public String getmSilver() {
 		return mSilver;
 	}
 
-	public void setmSilver(int mSilver) {
+	public void setmSilver(String mSilver) {
 		this.mSilver = mSilver;
 	}
 
-	public int getmBronze() {
+	public String getmBronze() {
 		return mBronze;
 	}
 
-	public void setmBronze(int mBronze) {
+	public void setmBronze(String mBronze) {
 		this.mBronze = mBronze;
 	}
 
-	public int getfGold() {
+	public String getfGold() {
 		return fGold;
 	}
 
-	public void setfGold(int fGold) {
+	public void setfGold(String fGold) {
 		this.fGold = fGold;
 	}
 
-	public int getfSilver() {
+	public String getfSilver() {
 		return fSilver;
 	}
 
-	public void setfSilver(int fSilver) {
+	public void setfSilver(String fSilver) {
 		this.fSilver = fSilver;
 	}
 
-	public int getfBronze() {
+	public String getfBronze() {
 		return fBronze;
 	}
 
-	public void setfBronze(int fBronze) {
+	public void setfBronze(String fBronze) {
 		this.fBronze = fBronze;
+	}
+	
+	@Override	
+	public String toString() {
+
+		return "Name: " + getName() + 
+				"\nmG: " + getmGold() + " mS: " + getmSilver() + " mB: " + getmBronze() + 
+				"\nfG: " + getfGold() + " fS: " + getfSilver() + " fB: " + getfBronze() + "\n";
 	}
 }
