@@ -3,9 +3,9 @@ package model;
 public class Country {
 
 	private String name;
-	private String mGold, mSilver, mBronze, fGold, fSilver, fBronze;
+	private int mGold, mSilver, mBronze, fGold, fSilver, fBronze;
 	
-	public Country(String name, String mGold, String mSilver, String mBronze, String fGold, String fSilver, String fBronze) {
+	public Country(String name, int mGold, int mSilver, int mBronze, int fGold, int fSilver, int fBronze) {
 		super();
 		this.name = name;
 		this.mGold = mGold;
@@ -24,59 +24,67 @@ public class Country {
 		this.name = name;
 	}
 
-	public String getmGold() {
+	public int getmGold() {
 		return mGold;
 	}
 
-	public void setmGold(String mGold) {
+	public void setmGold(int mGold) {
 		this.mGold = mGold;
 	}
 
-	public String getmSilver() {
+	public int getmSilver() {
 		return mSilver;
 	}
 
-	public void setmSilver(String mSilver) {
+	public void setmSilver(int mSilver) {
 		this.mSilver = mSilver;
 	}
 
-	public String getmBronze() {
+	public int getmBronze() {
 		return mBronze;
 	}
 
-	public void setmBronze(String mBronze) {
+	public void setmBronze(int mBronze) {
 		this.mBronze = mBronze;
 	}
 
-	public String getfGold() {
+	public int getfGold() {
 		return fGold;
 	}
 
-	public void setfGold(String fGold) {
+	public void setfGold(int fGold) {
 		this.fGold = fGold;
 	}
 
-	public String getfSilver() {
+	public int getfSilver() {
 		return fSilver;
 	}
 
-	public void setfSilver(String fSilver) {
+	public void setfSilver(int fSilver) {
 		this.fSilver = fSilver;
 	}
 
-	public String getfBronze() {
+	public int getfBronze() {
 		return fBronze;
 	}
 
-	public void setfBronze(String fBronze) {
+	public void setfBronze(int fBronze) {
 		this.fBronze = fBronze;
+	}
+	
+	public String maleAndName() {
+		
+		return getName() + ": " + getmGold() + " " + getmSilver() + " " + getmBronze();
 	}
 	
 	@Override	
 	public String toString() {
 
-		return "Name: " + getName() + 
-				"\nmG: " + getmGold() + " mS: " + getmSilver() + " mB: " + getmBronze() + 
-				"\nfG: " + getfGold() + " fS: " + getfSilver() + " fB: " + getfBronze() + "\n";
+//		return "Name: " + getName() + 
+//				"\nmG: " + getmGold() + " mS: " + getmSilver() + " mB: " + getmBronze() + 
+//				"\nfG: " + getfGold() + " fS: " + getfSilver() + " fB: " + getfBronze() + "\n";
+		
+		return getName() + ": " + getmGold() + " " + getmSilver() + " " + getmBronze() + "; " + 
+		getfGold() + " " + getfSilver() + " " + getfBronze();
 	}
 }

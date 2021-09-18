@@ -73,14 +73,28 @@ public class ControllerGUI {
     		
     		String [] data = countries[i].split(";");
     		
-    		Country c = new Country(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+    		int mGold = Integer.parseInt(data[1]);
+    		int mSilver = Integer.parseInt(data[2]);
+    		int mBronze = Integer.parseInt(data[3]);
+    		int fGold = Integer.parseInt(data[4]);
+    		int fSilver = Integer.parseInt(data[5]);
+    		int fBronze = Integer.parseInt(data[6]);
     		
-    		System.out.println(c.toString());
+    		Country c = new Country(data[0], mGold, mSilver, mBronze, fGold, fSilver, fBronze);
     		
-    		result += c.toString() + "\n";
+    		manager.addCountry(c);
     		
-    		taResults.setText(result);
+//    		System.out.println(c.toString());
+//    		
+//    		result += c.toString() + "\n";
+//    		
+//    		taResults.setText(result);
     	}
+    	
+    	sortAll();
+    	
+//    	taResults.setText(manager.printArray());
+//    	System.out.println(manager.printArray());
     }
     
     public void showSuccessDialogue(String header, String message) {
@@ -90,5 +104,21 @@ public class ControllerGUI {
     	alert.setHeaderText(header);
     	alert.setContentText(message);
     	alert.showAndWait();
+    }
+    
+    public void sortAll() {
+    	
+    	String result = "";
+    	
+    	manager.sortByMalePodiumAndName();
+    	
+    	result += "COMPARATOR CLASS\n";
+    	result += manager.printArray();
+    	
+    	System.out.println(manager.printMaleAndName());
+    	
+    	taResults.setText(result);
+    	
+    	manager.removeAllCountries();
     }
 }
