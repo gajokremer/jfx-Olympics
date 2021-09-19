@@ -112,10 +112,13 @@ public class ControllerGUI {
     	
     	manager.sortByMalePodiumAndName();
     	
-    	result += "COMPARATOR CLASS\n";
-    	result += manager.printArray();
+    	result += "===COMPARATOR CLASS===\n";
+    	result += manager.printMaleAndName();
+    	result += "----------";
     	
     	System.out.println(manager.printMaleAndName());
+    	
+    	
     	
     	taResults.setText(result);
     	
