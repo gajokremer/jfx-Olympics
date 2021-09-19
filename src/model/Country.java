@@ -72,9 +72,29 @@ public class Country {
 		this.fBronze = fBronze;
 	}
 	
+	public int getTotalGold() {
+		
+		return mGold + fGold;
+	}
+	
+	public int getTotalSilver() {
+		
+		return mSilver + fSilver;
+	}
+	
+	public int getTotalBronze() {
+		
+		return mBronze + fBronze;
+	}
+	
 	public String maleAndName() {
 		
 		return getName() + ": " + getmGold() + " " + getmSilver() + " " + getmBronze();
+	}
+	
+	public String femaleAndName() {
+		
+		return getName() + ": " + getfGold() + " " + getfSilver() + " " + getfBronze();
 	}
 	
 	@Override	

@@ -35,12 +35,5 @@ public class MalePodiumAndNameComparator implements Comparator<Country> {
 
 			return c1.getName().compareTo(c2.getName());
 		}
-		
-//		else {
-//
-//			return c1.getmSilver()compareTo(c2.getmSilver());
-//		}
-
 	}
-
 }

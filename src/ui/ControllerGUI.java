@@ -114,9 +114,15 @@ public class ControllerGUI {
     	
     	result += "===COMPARATOR CLASS===\n";
     	result += manager.printMaleAndName();
-    	result += "----------";
+    	result += "----------\n\n";
     	
-    	System.out.println(manager.printMaleAndName());
+//    	System.out.println(manager.printMaleAndName());
+    	
+    	manager.sortByFemalePodiumAndName();
+    	
+    	result += "===COMPARATOR INTERFACE===\n";
+    	result += manager.printFemaleAndName();
+    	result += "----------\n\n";
     	
     	
     	
