@@ -7,8 +7,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextArea fx:id="taResults" layoutX="321.0" layoutY="14.0" prefHeight="293.0" prefWidth="221.0" wrapText="true" />
-      <TextArea fx:id="taInput" layoutX="57.0" layoutY="14.0" prefHeight="293.0" prefWidth="221.0" wrapText="true" />
+      <TextArea fx:id="taResults" layoutX="321.0" layoutY="14.0" prefHeight="293.0" prefWidth="236.0" wrapText="true" />
+      <TextArea fx:id="taInput" layoutX="42.0" layoutY="14.0" prefHeight="293.0" prefWidth="236.0" wrapText="true" />
       <Button layoutX="254.0" layoutY="328.0" mnemonicParsing="false" onAction="#organizeInfo" style="-fx-background-color: blue;" text="Organize" textFill="WHITE">
          <font>
             <Font size="18.0" />

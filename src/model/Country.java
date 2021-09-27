@@ -97,6 +97,11 @@ public class Country {
 		return getName() + ": " + getfGold() + " " + getfSilver() + " " + getfBronze();
 	}
 	
+	public String totalMedals() {
+		
+		return getName() + ": " + getTotalGold() + " " + getTotalSilver() + " " + getTotalBronze();
+	}
+	
 	@Override	
 	public String toString() {
 

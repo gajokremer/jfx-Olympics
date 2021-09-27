@@ -30,7 +30,6 @@ public class ControllerGUI {
     public ControllerGUI () {
 
     	manager = new MedalManager();
-
     }
     
     @FXML
@@ -47,54 +46,37 @@ public class ControllerGUI {
 
     	String line = taInput.getText();
     	
-//    	String [] data = line.split(";");
-//    	
-//    	data[6].split("\n");
-//    	
-//    	Country c = new Country(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
-//    	
-//		if(manager.addCountry(c)) {
-//			
-//			String message = "";
-//			String header = "";
-//			showSuccessDialogue(header, message);
-//			
-//			System.out.println(c.toString());
-//		}
-//		
-//		taInput.setText("");
-//		taResults.setText(c.toString());
-    	
-    	String [] countries = line.split("\n");
-    	
-    	String result = "";
-    	
-    	for(int i = 0; i < countries.length; i++) {
+    	if(line != "") {
     		
-    		String [] data = countries[i].split(";");
+    		String [] countries = line.split("\n");
     		
-    		int mGold = Integer.parseInt(data[1]);
-    		int mSilver = Integer.parseInt(data[2]);
-    		int mBronze = Integer.parseInt(data[3]);
-    		int fGold = Integer.parseInt(data[4]);
-    		int fSilver = Integer.parseInt(data[5]);
-    		int fBronze = Integer.parseInt(data[6]);
-    		
-    		Country c = new Country(data[0], mGold, mSilver, mBronze, fGold, fSilver, fBronze);
-    		
-    		manager.addCountry(c);
-    		
-//    		System.out.println(c.toString());
-//    		
-//    		result += c.toString() + "\n";
-//    		
-//    		taResults.setText(result);
+    		for(int i = 0; i < countries.length; i++) {
+    			
+    			String [] data = countries[i].split(";");
+    			
+    			int mGold = Integer.parseInt(data[1]);
+    			int mSilver = Integer.parseInt(data[2]);
+    			int mBronze = Integer.parseInt(data[3]);
+    			int fGold = Integer.parseInt(data[4]);
+    			int fSilver = Integer.parseInt(data[5]);
+    			int fBronze = Integer.parseInt(data[6]);
+    			
+    			Country c = new Country(data[0], mGold, mSilver, mBronze, fGold, fSilver, fBronze);
+    			
+    			manager.addCountry(c);
+    		}
     	}
     	
     	sortAll();
+    }
+    
+    @FXML
+    void importData(ActionEvent event) throws IOException {
     	
-//    	taResults.setText(manager.printArray());
-//    	System.out.println(manager.printArray());
+//    	manager.importData();
+    	System.out.println(manager.listToText(manager.importData()));
+    	
+    	taInput.setText(manager.listToText(manager.importData()));
     }
     
     public void showSuccessDialogue(String header, String message) {
@@ -112,7 +94,8 @@ public class ControllerGUI {
     	
     	manager.sortByMalePodiumAndName();
     	
-    	result += "===COMPARATOR CLASS===\n";
+    	result += "===COMPARATOR CLASS===\n" + 
+    			"MALE\n";
     	result += manager.printMaleAndName();
     	result += "----------\n\n";
     	
@@ -120,10 +103,20 @@ public class ControllerGUI {
     	
     	manager.sortByFemalePodiumAndName();
     	
-    	result += "===COMPARATOR INTERFACE===\n";
+    	result += "===COMPARATOR INTERFACE===\n" + 
+    			"FEMALE\n";
     	result += manager.printFemaleAndName();
     	result += "----------\n\n";
     	
+    	result += "===SELECTION SORT===\n";
+    	manager.sortBySelectionSort();
+    	result += manager.printTotals();
+    	result += "----------\n\n";
+    	
+    	result += "===INSERTION SORT===\n";
+    	manager.sortByInsertionSort();
+    	result += manager.printTotals();
+    	result += "----------\n\n";
     	
     	
     	taResults.setText(result);
